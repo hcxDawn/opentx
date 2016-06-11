@@ -39,10 +39,10 @@ extern uint8_t s_current_protocol[NUM_MODULES];
 extern uint8_t s_pulses_paused;
 extern uint16_t failsafeCounter[NUM_MODULES];
 
-PACK(template<class T> struct PpmPulsesData {
+template<class T> struct PpmPulsesData {
   T pulses[20];
   T * ptr;
-});
+};
 
 #if defined(PPM_PIN_SERIAL)
 PACK(struct PxxSerialPulsesData {
@@ -86,7 +86,7 @@ PACK(struct PxxTimerPulsesData {
   uint32_t pcmOnesCount;
 });
 
-PACK(struct Dsm2TimerPulsesData {
+struct Dsm2TimerPulsesData {
 #if defined(MULTIMODULE)
   pulse_duration_t pulses[300];
 #else
@@ -95,7 +95,7 @@ PACK(struct Dsm2TimerPulsesData {
   pulse_duration_t * ptr;
   uint16_t rest;
   uint8_t index;
-});
+};
 #endif
 
 #define CROSSFIRE_BAUDRATE             400000

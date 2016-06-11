@@ -699,7 +699,7 @@ int ConvertGVar_216_to_217(int value)
   return value;
 }
 
-PACK(typedef struct {
+typedef struct {
   uint8_t   version;
   uint16_t  variant;
   CalibData calib[NUM_STICKS+NUM_POTS];
@@ -780,7 +780,7 @@ PACK(typedef struct {
   uint8_t bluetoothEnable;
   char bluetoothName[LEN_BLUETOOTH_NAME];
 #endif
-}) RadioData_v216;
+} RadioData_v216;
 
 void ConvertRadioData_216_to_217(RadioData & settings)
 {
