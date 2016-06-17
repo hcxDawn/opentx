@@ -152,11 +152,6 @@ bool menuMainView(evt_t event)
       pushMenu(menuTabModel[0]);
       return false;
 
-    case EVT_KEY_FIRST(KEY_MODEL):
-      killEvents(event);
-      pushMenu(menuTabChannels[lastChannelsPage]);
-      return false;
-
     case EVT_KEY_LONG(KEY_RADIO):
       killEvents(event);
       pushMenu(menuTabGeneral[0]);
